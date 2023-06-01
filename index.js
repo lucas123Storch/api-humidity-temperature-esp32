@@ -87,7 +87,7 @@ app.post("/data", (req, res) => {
   // res.status(200).send('Dados recebidos e gravados com sucesso!');
   // });
 });
-
-app.listen(3000, () => {
-  console.log("Servidor rodando na porta 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
 });
