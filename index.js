@@ -57,7 +57,7 @@ app.post("/data", (req, res) => {
     })
     .catch((error) => {
       // Se o documento não existir, este código irá criar o documento e adicionar os primeiros dados
-      if (error.code === 'not-found') {
+      if (error.message.includes('No document to update')) {
         docRef.set({
           entradas: [data],
         }).then(() => {
